@@ -1,66 +1,16 @@
-## Foundry
+# Uniswap ERC20 Swapper Contract
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+## Project Description
+This project is a Solidity smart contract for swapping Ether to ERC-20 tokens using the Uniswap V2 decentralized exchange. The contract leverages Chainlink price feeds to optionally validate the exchange rate to ensure fair and correct swaps. This is a hiring test assignment for Eiger company.
 
-Foundry consists of:
+## Features
+* Swap Ether to ERC-20 Tokens: Swap Ether to any specified ERC-20 token using Uniswap V2.
+* Price Feed Validation: Optionally validate the exchange rate using Chainlink price feeds to ensure fair transactions.
+* Ownership Management: The contract uses OpenZeppelin's Ownable2Step for secure ownership transfer and management.
+* DEX Router Update: The owner can update the Uniswap router address.
+* Price Feed Toggle: The owner can enable or disable the use of the price feed for validation.
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
-
-## Documentation
-
-https://book.getfoundry.sh/
-
-## Usage
-
-### Build
-
-```shell
-$ forge build
-```
-
-### Test
-
-```shell
-$ forge test
-```
-
-### Format
-
-```shell
-$ forge fmt
-```
-
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+## Dependencies
+* OpenZeppelin
+* Uniswap V2
+* Chainlink
