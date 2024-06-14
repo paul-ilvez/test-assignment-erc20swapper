@@ -22,6 +22,7 @@ interface ERC20Swapper {
  */
 contract MyERC20Swapper is ERC20Swapper, Ownable2Step {
     IUniswapV2Router02 public uniswapRouter;
+    AggregatorV3Interface internal priceFeed;
 
     event UniswapRouterChanged(
         address indexed oldRouter,
@@ -31,7 +32,6 @@ contract MyERC20Swapper is ERC20Swapper, Ownable2Step {
     constructor(address _uniswapRouter) Ownable(msg.sender) {
         require(_uniswapRouter != address(0), "DeX address cannot be zero");
         uniswapRouter = IUniswapV2Router02(_uniswapRouter);
-        AggregatorV3Interface internal priceFeed;
     }
 
     function swapEtherToToken(
